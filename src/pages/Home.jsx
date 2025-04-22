@@ -3,11 +3,11 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  const [films, setFilms] = useState([]);
+  const [movies, setMovies] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/films")
-      .then((res) => setFilms(res.data))
+      .get("http://localhost:3000/api/movies")
+      .then((res) => setMovies(res.data))
       .catch((err) => console.error(err));
   }, []);
 
@@ -15,9 +15,9 @@ export default function Home() {
     <div>
       <h1>Elenco Film</h1>
       <ul className="list-group">
-        {films.map((e) => (
-          <li key={e.id} className="list-group-item">
-            <Link to={`/films/${e.id}`}>{e.title}</Link>
+        {movies.map((f) => (
+          <li key={f.id} className="list-group-item">
+            <Link to={`/movies/${e.id}`}>{e.title}</Link>
           </li>
         ))}
       </ul>
