@@ -5,8 +5,8 @@ import Details from "./pages/Details";
 function App() {
   return (
     <>
-      <nav>
-        <Link className="navbar-main" to="/">
+      <nav className="navbar">
+        <Link className="navbar-brand" to="/">
           BoolFlix2
         </Link>
       </nav>
